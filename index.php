@@ -32,7 +32,7 @@ if (isset($_POST['username'])) {
 
 
 
-		header("Location: home");
+		header("Location: home.php");
 	} else {
 		$asgh= "<h2>Oops that username or password combination was incorrect.
 		<br /> Please try again.</h2>";
