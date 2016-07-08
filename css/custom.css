@@ -1,0 +1,61 @@
+.form_login{
+	margin-top:200px;
+
+}
+
+.text_login{
+	color: #000000;
+width: 150px;
+padding: 6px 15px 6px 15px;
+border-radius: 8px;
+}
+
+body{
+	background-color: #c3dae3;
+}
+
+
+.button1_home,.button2_home,.button3_home,.button4_home{
+
+	height:100px;
+	width: 200px;
+	border-radius: 10px;
+	background-color: #98ce7d
+}
+
+.home_group{
+	margin-top: 200px;
+}
+
+.button5_home,.button6_home{
+	height:30px;
+	width: 100px;
+	border-radius: 5px;
+	background-color: #ff9c5f;
+
+}
+
+.button6_home{
+	float:right;
+}
+
+.index_login,.index_register{
+	height:30px;
+	width: 100px;
+	border-radius:5px;
+	background-color: #ff9c5f;
+
+}
+
+
+a2{
+	margin-right: 100px;
+}
+
+.setting{
+	margin-top: 150px;
+}
+
+#semester3,#semester4,#semester5,#semester6,#semester7,#semester8{
+	display: none;
+}
