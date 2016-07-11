@@ -51,7 +51,7 @@ else{
 			  		style="font-size: 20px;"></span>Logout
 				</button>
 			</div>
-			<div class="col-lg-8"><center><h2>Mark Portal</h2></center></div>
+			<div class="col-lg-8"><center><h2>Marks Portal</h2></center></div>
 			<div class="col-lg-2"> 
 				<button type="button" class="btn btn-info " style="float:right;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true" 
 			  		style="font-size: 20px;"></span>
@@ -97,20 +97,20 @@ else{
 						<div class="col-lg-5" style="border: 1px solid black;border-radius: 20px;">
 							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-plus" style="color:#000000; float:right; font-size:35px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-plus" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 30px;">Create</a1>
+									<a1 style="font-size: 25px;">Create</a1>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									<h3><center>Generate </center></h3>
+									
 									<h4>
-									<ul style="padding-left:90px;padding-top:15px;line-height: 30px;">
+									<ul style="padding-left:90px;padding-top:5px;line-height: 25px;">
 										<li>Assignment</li>
 										<li>Slip Test</li>
 										<li>Cycle Test</li>
@@ -126,18 +126,18 @@ else{
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
 							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-pencil" style="color:#000000; float:right; font-size:35px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-pencil" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 30px;">Update</a1>
+									<a1 style="font-size: 25px;">Update</a1>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									<h3 style="line-height: 35px";><center><br>Update the marks obtained</center></h3><br><br>
+									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px; "><center>Update the marks obtained</center></h4>
 								</div>
 							</div>
 						</div>
@@ -155,13 +155,13 @@ else{
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 30px;">View</a1>
+									<a1 style="font-size: 25px;">View</a1>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									<h3 style="line-height: 35px";><center><br>Review the created papers </center></h3><br><br><br>
+									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px;"><center>Review the created papers </center></h4>
 
 								</div>
 							</div>
@@ -173,18 +173,18 @@ else{
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
 							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-stats" style="color:#000000; float:right; font-size:35px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-stats" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 30px;">Report</a1>
+									<a1 style="font-size: 25px;">Report</a1>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									<h3 style="line-height: 35px";><center><br>Track your class progress </center></h3><br><br><br>
+									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px;"><center>Track your class progress </center></h4>
 									
 								</div>
 							</div>
