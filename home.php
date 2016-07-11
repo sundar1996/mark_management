@@ -95,14 +95,14 @@ else{
 				<div class="row" style="margin-bottom: 50px;margin-top:30px;">
 					<a href="create.php" style="text-decoration: none;">
 						<div class="col-lg-5" style="border: 1px solid black;border-radius: 20px;">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-plus" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-plus" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 25px;">Create</a1>
+									<a1 style="font-size: 22px;">Create</a1>
 								</div>
 							</div>
 							
@@ -124,14 +124,14 @@ else{
 
 					<a href="update_list.php" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-pencil" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-pencil" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 25px;">Update</a1>
+									<a1 style="font-size: 22px;">Update</a1>
 								</div>
 							</div>
 							
@@ -148,14 +148,14 @@ else{
 				<div class="row">
 					<a href="list.php" style="text-decoration: none;">
 						<div class="col-lg-5" style="border: 1px solid black;border-radius: 20px;">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-th-list" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-th-list" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 25px;">View</a1>
+									<a1 style="font-size: 22px;">View</a1>
 								</div>
 							</div>
 							
@@ -171,14 +171,14 @@ else{
 
 					<a href="#" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
-		       						<span class="glyphicon glyphicon-stats" style="color:#000000; float:right; font-size:30px; vertical-align: middle;" aria-hidden="true">
+		       						<span class="glyphicon glyphicon-stats" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
 		       						<br>
 								</div>
 								<div class="col-lg-8">
-									<a1 style="font-size: 25px;">Report</a1>
+									<a1 style="font-size: 22px;">Report</a1>
 								</div>
 							</div>
 							
