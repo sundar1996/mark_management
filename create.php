@@ -106,7 +106,7 @@
 
                              <div class="form-group">
                                 <label for="username" class="col-md-4 control-label">Total Marks</label>
-                                <div class="col-md-1">
+                                <div class="col-md-3">
                       <input type="text" class="form-control" id="marks">
                                   </div>
                                </div>
