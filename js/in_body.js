@@ -1,7 +1,4 @@
-
-
 var xmlhttp;
-
 function GetXmlHttpObject()
 {
     if (window.XMLHttpRequest)
@@ -14,8 +11,6 @@ function GetXmlHttpObject()
     }
     return null;
 }
-
-
 
 function update() {
 	
@@ -98,16 +93,11 @@ function update() {
     xmlhttp.setRequestHeader("Content-length", parameters .length);
     xmlhttp.setRequestHeader("Connection", "close");
     xmlhttp.send(parameters);
-
-//alert(old+","+pass+","+conf+","+batch+","+department+","+semester+","+code);
 }
 else{
 	alert("Passwords do not match");
 }
 }
-
-
-
 
 function reset_details() {
 	
@@ -194,20 +184,11 @@ function reset_details() {
     xmlhttp.setRequestHeader("Content-length", parameters .length);
     xmlhttp.setRequestHeader("Connection", "close");
     xmlhttp.send(parameters);
-//alert(name+","+username+","+pass+","+conf+","+batch+","+department+","+semester+","+code);
 }
 else{
 	alert("Passwords do not match");
 }
 }
-
-
-
-	
-	
-
-
-
 
 function trig_code(box, id) {
     var el = document.getElementById(id);
@@ -228,7 +209,6 @@ function trig_code(box, id) {
 
 
 function ques() {
-	// body...
 
 	window.location="question_list.php";
 }
