@@ -48,8 +48,8 @@ for(var j=0;j<9;j++){
 }
 	}
 
-	
-	
+
+
 	var el = document.createElement("div");
  	el.setAttribute("class","form-group");
 	el.innerHTML ='<div class="form-group">\
@@ -83,16 +83,12 @@ function ques_box(x,m){
 		                    <option value="CO3">CO3</option>\
 		                    <option value="CO4">CO4</option>\
 		                    <option value="CO5">CO5</option>\
+												<option value="CO3">CO6</option>\
+		                    <option value="CO4">CO7</option>\
+		                    <option value="CO5">CO8</option>\
 		                </select>\
 		              </div>\
 		              <div class="col-md-2">\
-		                <select class="form-control" id="'+x+'program">\
-		                    <option value="PO1">PO1</option>\
-		                    <option value="PO2">PO2</option>\
-		                    <option value="PO3">PO3</option>\
-		                    <option value="PO4">PO4</option>\
-		                    <option value="PO5">PO5</option>\
-		                </select>\
 		              </div>';
 	 document.getElementById("third_set").appendChild(el);
 }
@@ -109,7 +105,7 @@ function pushquestions(){
 		 }
 
 		 var ref_name=document.getElementById("ref_name").value;
-		
+
 	var date=document.getElementById("date").value;
 
 	var code_sel = document.getElementsByName("code");
@@ -126,7 +122,7 @@ function pushquestions(){
 		     	var  batch = batch_sel[i].value;
 		   }
 		 }
-		var section=" "; 
+		var section=" ";
 
 	for(var se=1;se<3;se++){
 		if(document.getElementById("sec"+se).checked){
@@ -152,18 +148,18 @@ function pushquestions(){
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status == 200)
     {
-    	
-	}
-	
-	}
-      
 
-    xmlhttp.open("POST",url,false);  
+	}
+
+	}
+
+
+    xmlhttp.open("POST",url,false);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader("Content-length", parameters .length);
     xmlhttp.setRequestHeader("Connection", "close");
     xmlhttp.send(parameters);
-	
+
 
 
 
@@ -173,8 +169,6 @@ function pushquestions(){
 		var question=document.getElementById("ques"+i).value;
 		var co = document.getElementById(i+"course");
 		var course = co.options[co.selectedIndex].text;
-		var pro = document.getElementById(i+"program");
-		var program = pro.options[pro.selectedIndex].text;
 		var marks=document.getElementById("ques"+i).getAttribute("marks");
 		var paper_id=1001;
 		var xmlhttp=GetXmlHttpObject();
@@ -184,30 +178,50 @@ function pushquestions(){
             return;
       }
     var url="question_push.php";
-    var parameters="ques="+question+"&course="+course+"&program="+program+"&marks="+marks+"&papid="+paper_id;
+    var parameters="ques="+question+"&course="+course+"&marks="+marks+"&papid="+paper_id;
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status == 200)
     {
-    	 
-	}
-	
-	}
-      
 
-    xmlhttp.open("POST",url,false);  
+	}
+
+	}
+
+
+    xmlhttp.open("POST",url,false);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader("Content-length", parameters .length);
     xmlhttp.setRequestHeader("Connection", "close");
     xmlhttp.send(parameters);
-	
+
 }
+
+
+
+var url="insertroll.php";
+xmlhttp.onreadystatechange=function(){
+if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+{
+
+}
+
+}
+
+
+xmlhttp.open("POST",url,true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.setRequestHeader("Content-length", parameters .length);
+xmlhttp.setRequestHeader("Connection", "close");
+xmlhttp.send(parameters);
+
+
 	alert("Created successfully...");
 		window.location="create.php";
 }
 
 function retrieve(){
 
-	
+
 		var xmlhttp=GetXmlHttpObject();
 
 
@@ -223,7 +237,7 @@ function retrieve(){
 	  {
 	  	var retrieved = JSON.parse(xmlhttp.responseText);
 	  	split_str(retrieved);
-	  } 
+	  }
 }
 xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
@@ -234,7 +248,7 @@ xmlhttp.send(null);
 
 function split_str(x) {
 
-var batch = x[0].split(","); 
+var batch = x[0].split(",");
 var code=x[1].split(",");
 
 for(var i=0;i<code.length;i++)
@@ -242,8 +256,8 @@ for(var i=0;i<code.length;i++)
 	var el = document.createElement("label");
 	el.setAttribute("class","radio-inline");
 	el.innerHTML ='<input type="radio" name="code"  value="'+code[i]+'"> '+code[i];
-                               
-                               
+
+
 	 document.getElementById("code_space").appendChild(el);
 }
 
@@ -253,8 +267,8 @@ for(var i=0;i<batch.length;i++)
 	var el = document.createElement("label");
 	el.setAttribute("class","radio-inline");
 	el.innerHTML ='<input type="radio" name="batch"  value="'+batch[i]+'"> '+batch[i];
-                               
-                               
+
+
 	 document.getElementById("batch_space").appendChild(el);
 }
 }
@@ -270,5 +284,3 @@ $("#8marks").hide();
 $("#10marks").hide();
 $("#12marks").hide();
 $("#16marks").hide();
-
-

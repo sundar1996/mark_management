@@ -46,7 +46,7 @@ else{
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <script src="js/jquery-3.0.0.min.js"></script>
           <script type="text/javascript" src="js/list.js"></script>
-					<script type="text/javascript" src="js/insert.js"></script>
+					<script type="text/javascript" src="js/report.js"></script>
 
 
 </head>
@@ -59,7 +59,7 @@ else{
             style="font-size: 20px;"></span>Logout
         </button>
       </div>
-      <div class="col-lg-8"><center><h2>Update</h2></center></div>
+      <div class="col-lg-8"><center><h2>Report</h2></center></div>
       <div class="col-lg-2">
         <button type="button" class="btn btn-info " style="float:right;" onclick="window.location='home.php'"> Home
         </button>
@@ -67,62 +67,21 @@ else{
     </div>
     <hr>
 
-    <div class="row" >
-        <div class="col-md-10 col-md-offset-1">
+    <div class="row"  >
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                  	<div class="form-horizontal col-md-10 col-md-offset-1">
 
-                		<table class="table table-striped ">
-                		<thead>
-						     <tr>
-						        <th>RollNo</th>
-										<?php
-										for($i=1;$i<$rowcount;$i++){
-											echo '<th>'.$i.'</th>';}
-?>
+                  <div class="row">
 
-							</tr>
-						    </thead>
+                    <canvas id="canvas" width="1400" height="550">
+</canvas>
 
-						    <tbody>
 
-						    <?php
+                  </div>
 
 
 
-	while($row1 = mysqli_fetch_array($query1))
-	{
-		echo '<tr><td>'.$row1[0].'</td>';
-
-		for($i=1;$i<$rowcount;$i++){
-			$row = mysqli_fetch_array($query);
-			$textname="marktext$num";
-	    echo '<td><input type="text" id="'.$textname.'" rollno="'.$row1[0].'" colname="'.$row[0].'" value="'.$row1[$i].'" size="5" ></td>';
-			$num++;
-		}
-		$sql = "SELECT col_name FROM questions where question_paper_id=$pid ";
-		$query = mysqli_query($dbcon, $sql);
-
-		echo '</tr>';
-	}
-
-
-
-
-?>
-
-
-						    </tbody>
-						  </table>
-						<?php
-$num--;
-
-						echo	'<button type="button" class="btn btn-info " style="float:right;" onclick="markinsert('.$num.');"> Submit
-							</button>';
-
-							?>
-                	</div>
             	</div>
           	</div>
         </div>
@@ -132,7 +91,70 @@ $num--;
 </div>
   <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/list.js"></script>
+<script>
 
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.moveTo(70,50);
+ctx.lineTo(70,550);
+ctx.stroke();
+ctx.moveTo(20,500);
+ctx.lineTo(1350,500);
+ctx.stroke();
+var x=100;
+
+ctx.fillStyle = "blue";
+
+ctx.fillRect(1100,20,25,25);
+ctx.font = "18px Arial";
+
+ctx.fillText("Total",1130,40);
+ctx.fillStyle = "#86EEEE";
+
+ctx.fillText("Achieved",1130,80);
+
+ctx.fillRect(1100,60,25,25);
+ctx.font = "25px Arial";
+
+var y;
+for(var i=0;i<16;i++){
+y=i+1;
+if(y%2==0){
+  ctx.fillStyle = "#86EEEE";
+
+  ctx.fillRect(x,500,40,-300);
+
+
+  x=x+100;
+
+}
+else{
+  ctx.fillStyle = "blue";
+
+  ctx.fillRect(x,500,40,-300);
+
+x=x+60;
+}
+
+}
+x=150;
+for(var i=1;i<9;i++){
+  var graphlabel="CO".concat(i);
+  ctx.fillStyle = "BLACK";
+
+  ctx.fillText(graphlabel,x-30,525);
+
+  x=x+160;
+
+}
+
+
+
+
+
+
+</script>
 
 </body>
 </html>

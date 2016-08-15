@@ -1,34 +1,34 @@
-<?php 
+<?php
 
 
 session_start();
 if (isset($_POST['username'])) {
-        
+
 
 	include_once("dbconnect.php");
-	
+
 
     $usname = strip_tags($_POST['username']);
 	$paswd = strip_tags($_POST['password']);
-	
+
 	$usname = mysqli_real_escape_string($dbcon, $usname);
 	$paswd = mysqli_real_escape_string($dbcon, $paswd);
-	
 
-	
+
+
 	$sql = "SELECT id,username,password FROM login WHERE username = '$usname' AND password='$paswd'";
 	$query = mysqli_query($dbcon, $sql);
 	$row = mysqli_fetch_row($query);
 	$per_id=$row[0];
 	$per_name=$row[1];
 	$per_pass=$row[2];
-	
+
 
 	if ($usname == $per_name && $paswd == $per_pass) {
 
 		$_SESSION['id'] = $per_id;
 		$_SESSION['pass']=$per_pass;
-	
+
 
 
 
@@ -37,7 +37,7 @@ if (isset($_POST['username'])) {
 		$asgh= "<h2>Oops that username or password combination was incorrect.
 		<br /> Please try again.</h2>";
 	}
-	
+
 }
 
  ?>
@@ -53,7 +53,7 @@ if (isset($_POST['username'])) {
 	</head>
 	<body>
 		<div class="container">
-			
+
 			<div class="row" style="height:180px;"></div>
 			<div class="row"><center><h1>KCET PORTAL</h1></center></div>
 			<hr>
@@ -95,6 +95,3 @@ if (isset($_POST['username'])) {
 		<script type="text/javascript" src="js/in_body.js"></script>
 	</body>
 </html>
-
-
-

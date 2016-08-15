@@ -4,27 +4,11 @@ if (isset($_SESSION['id'])) {
 
 	include_once("dbconnect.php");
     $id=$_SESSION['id'];
-		$pid=$_GET['id'];
+    $sql = "SELECT question_paper_id,type,reference_name,date FROM question_paper where staff_id=$id order by date desc";
+	$query = mysqli_query($dbcon, $sql);
+  	$rowcount=mysqli_num_rows($query);
 
-		$sql = " SELECT table_name FROM question_paper where question_paper_id=$pid ";
-		$query = mysqli_query($dbcon, $sql);
-		$row = mysqli_fetch_row($query);
-		$tabname=$row[0];
-		$num=1;
-
-		$_SESSION['inserttable']=$tabname;
-
-
-
-    $sql = "SELECT col_name FROM questions where question_paper_id=$pid ";
-    $query = mysqli_query($dbcon, $sql);
-    $rowcount=mysqli_num_rows($query);
-		$rowcount++;
-
-
-    $sql1 = " SELECT * FROM $tabname";
-		$query1 = mysqli_query($dbcon, $sql1);
-
+	mysqli_close($dbcon);
 
 }
 
@@ -46,7 +30,8 @@ else{
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <script src="js/jquery-3.0.0.min.js"></script>
           <script type="text/javascript" src="js/list.js"></script>
-					<script type="text/javascript" src="js/insert.js"></script>
+          <script type="text/javascript" src="js/report.js"></script>
+
 
 
 </head>
@@ -59,7 +44,7 @@ else{
             style="font-size: 20px;"></span>Logout
         </button>
       </div>
-      <div class="col-lg-8"><center><h2>Update</h2></center></div>
+      <div class="col-lg-8"><center><h2>Report</h2></center></div>
       <div class="col-lg-2">
         <button type="button" class="btn btn-info " style="float:right;" onclick="window.location='home.php'"> Home
         </button>
@@ -76,12 +61,10 @@ else{
                 		<table class="table table-striped ">
                 		<thead>
 						     <tr>
-						        <th>RollNo</th>
-										<?php
-										for($i=1;$i<$rowcount;$i++){
-											echo '<th>'.$i.'</th>';}
-?>
-
+						        <th>Reference Name</th>
+						        <th>Type</th>
+						        <th>Date</th>
+						        <th></th>
 							</tr>
 						    </thead>
 
@@ -90,21 +73,10 @@ else{
 						    <?php
 
 
-
-	while($row1 = mysqli_fetch_array($query1))
+	while($row = mysqli_fetch_array($query))
 	{
-		echo '<tr><td>'.$row1[0].'</td>';
 
-		for($i=1;$i<$rowcount;$i++){
-			$row = mysqli_fetch_array($query);
-			$textname="marktext$num";
-	    echo '<td><input type="text" id="'.$textname.'" rollno="'.$row1[0].'" colname="'.$row[0].'" value="'.$row1[$i].'" size="5" ></td>';
-			$num++;
-		}
-		$sql = "SELECT col_name FROM questions where question_paper_id=$pid ";
-		$query = mysqli_query($dbcon, $sql);
-
-		echo '</tr>';
+	    echo '<tr><td>'.$row['reference_name'].'</td><td>'.$row["type"].'</td><td>'.$row["date"].'</td><td><button type="button" class="btn btn-success " onclick=reportcall('.$row[question_paper_id].') > Report >>></button></td></tr>';
 	}
 
 
@@ -115,13 +87,7 @@ else{
 
 						    </tbody>
 						  </table>
-						<?php
-$num--;
 
-						echo	'<button type="button" class="btn btn-info " style="float:right;" onclick="markinsert('.$num.');"> Submit
-							</button>';
-
-							?>
                 	</div>
             	</div>
           	</div>

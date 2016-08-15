@@ -12,10 +12,9 @@ function GetXmlHttpObject()
 }
 
 
-
 function ques(qid){
 
-	
+
 	var xmlhttp=GetXmlHttpObject();
 	if (xmlhttp==null)
       {
@@ -28,7 +27,7 @@ url=url+"&sid="+Math.random();
 xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status == 200)
       {
-            } 
+            }
 }
 xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
@@ -41,5 +40,8 @@ xmlhttp.send(null);
 }
 
 
-
-
+function updatecall(id){
+  var link="update.php?id=";
+  var urllink=link.concat(id);
+  window.location=urllink;
+}

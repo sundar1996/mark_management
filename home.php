@@ -20,17 +20,17 @@ if (isset($_SESSION['id'])) {
 	$code=$row[8];
 
 	if($name==NULL && $dept==NULL && $sem== NULL && $code== NULL){
-	 header("Location: reset.php"); 
+	 header("Location: reset.php");
 	}
 
 	mysqli_close($dbcon);
-			
+
 }
 
 
 
 else{
-	 header("Location: index.php"); 
+	 header("Location: index.php");
 }
 ?>
 
@@ -47,19 +47,19 @@ else{
 		<div class="row" style="height:40px;"></div>
 		<div class="row">
 			<div class="col-lg-2">
-				<button type="button" class="btn btn-danger " style="float:left;" onclick="window.location='logout.php'">  <span class="glyphicon glyphicon-log-out" aria-hidden="true" 
+				<button type="button" class="btn btn-danger " style="float:left;" onclick="window.location='logout.php'">  <span class="glyphicon glyphicon-log-out" aria-hidden="true"
 			  		style="font-size: 20px;"></span>Logout
 				</button>
 			</div>
 			<div class="col-lg-8"><center><h2>Marks Portal</h2></center></div>
-			<div class="col-lg-2"> 
-				<button type="button" class="btn btn-info " style="float:right;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true" 
+			<div class="col-lg-2">
+				<button type="button" class="btn btn-info " style="float:right;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
 			  		style="font-size: 20px;"></span>
 				</button>
 			</div>
 		</div>
 		<hr>
-		
+
 
 		<div class="row">
 			<div class="col-lg-6" style="padding-right: 80px;padding-left: 80px;">
@@ -88,9 +88,9 @@ else{
       </tr>
     </tbody>
   </table>
-				
+
 			</div>
-			
+
 			<div class="col-lg-6">
 				<div class="row" style="margin-bottom: 50px;margin-top:30px;">
 					<a href="create.php" style="text-decoration: none;">
@@ -105,10 +105,10 @@ else{
 									<a1 style="font-size: 22px;">Create</a1>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									
+
 									<h4>
 									<ul style="padding-left:90px;padding-top:5px;line-height: 25px;">
 										<li>Assignment</li>
@@ -120,7 +120,7 @@ else{
 							</div>
 						</div>
 					</a>
-					
+
 
 					<a href="update_list.php" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
@@ -134,7 +134,7 @@ else{
 									<a1 style="font-size: 22px;">Update</a1>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
 									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px; "><center>Update the marks obtained</center></h4>
@@ -142,7 +142,7 @@ else{
 							</div>
 						</div>
 					</a>
-				
+
 				</div>
 
 				<div class="row">
@@ -158,7 +158,7 @@ else{
 									<a1 style="font-size: 22px;">View</a1>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
 									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px;"><center>Review the created papers </center></h4>
@@ -167,9 +167,9 @@ else{
 							</div>
 						</div>
 					</a>
-					
 
-					<a href="#" style="text-decoration: none;">
+
+					<a href="reportlist.php" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;">
 							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #86EEEE;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
@@ -181,23 +181,23 @@ else{
 									<a1 style="font-size: 22px;">Report</a1>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
 									<h4 style="line-height: 35px;padding-top: 20px;padding-bottom:20px;"><center>Track your class progress </center></h4>
-									
+
 								</div>
 							</div>
 						</div>
 					</a>
-				
+
 				</div>
 
-			</div>		
+			</div>
 		</div>
 	</div>
 
-	
+
 
 
 
