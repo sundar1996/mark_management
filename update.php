@@ -6,24 +6,25 @@ if (isset($_SESSION['id'])) {
     $id=$_SESSION['id'];
 		$pid=$_GET['id'];
 
-		$sql = " SELECT table_name FROM question_paper where question_paper_id=$pid ";
-		$query = mysqli_query($dbcon, $sql);
-		$row = mysqli_fetch_row($query);
-		$tabname=$row[0];
-		$num=1;
+$num=1;
 
-		$_SESSION['inserttable']=$tabname;
-
-
-
-    $sql = "SELECT col_name FROM questions where question_paper_id=$pid ";
+	$sql = "SELECT section from question_paper where question_paper_id=$pid ";
     $query = mysqli_query($dbcon, $sql);
-    $rowcount=mysqli_num_rows($query);
-		$rowcount++;
+		$row = mysqli_fetch_row($query);
+$section=$row[0];
 
+$sql = "SELECT question_id from questions where question_paper_id=$pid ";
+	$query = mysqli_query($dbcon, $sql)
+	or die('Error querying database.');
 
-    $sql1 = " SELECT * FROM $tabname";
-		$query1 = mysqli_query($dbcon, $sql1);
+	$row = mysqli_fetch_row($query);
+	$rowcount=mysqli_num_rows($query);
+	$rowcount++;
+
+    $sql1 = " SELECT RollNo FROM studentmaster where section='$section' and DeptId=1 and batch='2014-2018' ";
+		$query1 = mysqli_query($dbcon, $sql1)
+		or die('Error querying database.');
+
 
 
 }
@@ -88,22 +89,26 @@ else{
 						    <tbody>
 
 						    <?php
-
-
-
-	while($row1 = mysqli_fetch_array($query1))
+while($row1 = mysqli_fetch_array($query1))
 	{
 		echo '<tr><td>'.$row1[0].'</td>';
 
-		for($i=1;$i<$rowcount;$i++){
+		$sql="select * from marks where pid=$pid and rollno='$row1[0]'";
+		$query = mysqli_query($dbcon, $sql);
+		while($row = mysqli_fetch_array($query)){
+			$textname="marktext$num";
+			echo '<td><input type="text" id="'.$textname.'" rollno="'.$row1[0].'" value="'.$row[3].'" quesid="'.$row[2].'" size="5" ></td>';
+			$num++;
+		}
+
+		/*for($i=1;$i<$rowcount;$i++){
 			$row = mysqli_fetch_array($query);
 			$textname="marktext$num";
 	    echo '<td><input type="text" id="'.$textname.'" rollno="'.$row1[0].'" colname="'.$row[0].'" value="'.$row1[$i].'" size="5" ></td>';
 			$num++;
 		}
-		$sql = "SELECT col_name FROM questions where question_paper_id=$pid ";
-		$query = mysqli_query($dbcon, $sql);
 
+*/
 		echo '</tr>';
 	}
 
@@ -120,6 +125,7 @@ $num--;
 
 						echo	'<button type="button" class="btn btn-info " style="float:right;" onclick="markinsert('.$num.');"> Submit
 							</button>';
+
 
 							?>
                 	</div>

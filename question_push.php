@@ -11,25 +11,13 @@ $p_id=$_SESSION['pid'];
 
 
 include_once("dbconnect.php");
-	$query = "insert into questions values('$p_id',NULL,'$marks','$question','$co',NULL )"  ;
+	$query = "insert into questions values('$p_id',NULL,'$marks','$question','$co' )"  ;
 
 		$result = mysqli_query($dbcon, $query)
 		or die('Error querying database.');
 
-		$sql = "SELECT question_id FROM questions order by question_id desc limit 1";
-		$query = mysqli_query($dbcon, $sql);
-		$row = mysqli_fetch_row($query);
-		$col_name="ques$row[0]";
 
-		$query = "update questions set col_name='$col_name' where question_id='$row[0]' " ;
 
-		$result = mysqli_query($dbcon, $query)
-		or die('Error querying database.');
-
-		$query = "alter table $_SESSION[table_name] add column $col_name int DEFAULT 0" ;
-
-		$result = mysqli_query($dbcon, $query)
-		or die('Error querying database.');
 
 
 		mysqli_close($dbcon);

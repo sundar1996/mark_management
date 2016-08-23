@@ -5,15 +5,12 @@ if (isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 $rollno=$_POST['rollno'];
-$column=$_POST['column'];
 $mark=$_POST['mark'];
-
-$tabname=$_SESSION['inserttable'];
-
+$quesid=$_POST['quesid'];
 
 include_once("dbconnect.php");
 
-		$query = "update $tabname set $column=$mark where rollno='$rollno' " ;
+		$query = "update marks set marks=$mark where rollno='$rollno'and qid=$quesid " ;
 
 		$result = mysqli_query($dbcon, $query)
 		or die('Error querying database.');

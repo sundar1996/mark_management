@@ -23,8 +23,8 @@ textname=textname.concat(i);
 else{
 
 var e=document.getElementById(textname);
-var col_name=e.getAttribute("colname");
 var rollno=e.getAttribute("rollno");
+var quesid=e.getAttribute("quesid");
 var mark=e.value;
 var xmlhttp=GetXmlHttpObject();
 
@@ -34,7 +34,7 @@ if (xmlhttp==null)
        return;
  }
 var url="insertmark.php";
-var parameters="rollno="+rollno+"&column="+col_name+"&mark="+mark;
+var parameters="rollno="+rollno+"&mark="+mark+"&quesid="+quesid;
 //alert(parameters);
 xmlhttp.onreadystatechange=function(){
 if (xmlhttp.readyState==4 && xmlhttp.status == 200)
@@ -50,12 +50,8 @@ xmlhttp.setRequestHeader("Content-length", parameters .length);
 xmlhttp.setRequestHeader("Connection", "close");
 xmlhttp.send(parameters);
 
-
-
 }
-
-  }
-
+}
 alert("inserted successfully");
 
 }
